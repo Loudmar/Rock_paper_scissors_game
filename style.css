@@ -39,3 +39,30 @@ button:hover {
     margin: 25px;
     color: whitesmoke;
 }
+
+.score-container {
+  color: whitesmoke;
+  padding: 3px;
+}
+
+.score-player {
+  color: green;
+}
+
+.score-computer {
+  color: red;
+}
+
+.score-ties {
+  color: yellow;
+}
+
+.reset-button {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: whitesmoke;
+  background-color: orange;
+}
