@@ -5,11 +5,26 @@ const player = document.querySelector('.score-player');
 const computer = document.querySelector('.score-computer');
 const ties = document.querySelector('.score-ties');
 const gameTotal = document.querySelector('.score-total');
+const setAutoPlay = document.querySelector('.auto-play');
+
 let score = {
   wins: 0,
   losses: 0,
   ties: 0
 };
+
+//To save the result in local storage use the below;
+//const scoreSaved = JSON.parse(localStorage.getItem('score')); 
+
+//After the file is deleted from local storage you may get an error of null. If so, add the this if statement below to give a default value to the score.
+
+/* if (!score) {
+  score = {
+    wins: 0,
+    losses: 0,
+    ties: 0
+  };
+} */
 
 function computerPlay() {
   const options = ['rock', 'paper', 'scissors'];
@@ -60,6 +75,7 @@ function playRound(playerSelection) {
   computer.innerHTML = score.losses;
   ties.innerHTML = score.ties;
   gameTotal.innerHTML = score.wins + score.losses + score.ties;
+  //localStorage.setItem('score', JSON.stringify(score));
 }
 
 buttons.forEach((button) => {
@@ -77,6 +93,7 @@ reset.addEventListener('click', () => {
   computer.innerHTML = "";
   ties.innerHTML = "";
   gameTotal.innerHTML = "";
+  //localStorage.removeItem('score');
 });
 
 let isAutoPlaying = false;
