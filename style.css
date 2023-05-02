@@ -57,7 +57,8 @@ button:hover {
   color: yellow;
 }
 
-.reset-button {
+.reset-button,
+..auto-play {
   margin: 10px;
   padding: 5px;
   border-radius: 5px;
