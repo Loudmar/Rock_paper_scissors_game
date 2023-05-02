@@ -78,3 +78,26 @@ reset.addEventListener('click', () => {
   ties.innerHTML = "";
   gameTotal.innerHTML = "";
 });
+
+let isAutoPlaying = false;
+let intervalId;
+
+function autoPlay() {
+  
+  if (!isAutoPlaying) {
+    intervalId = setInterval(function() {
+    const playerMove = computerPlay();
+    playRound(playerMove);
+  }, 2000);
+    isAutoPlaying = true;
+    setAutoPlay.innerHTML = 'Stop Auto Play';
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+    setAutoPlay.innerHTML = 'Auto Play';
+  }
+}
+
+setAutoPlay.addEventListener('click', () => {
+  autoPlay();
+});
